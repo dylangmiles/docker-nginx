@@ -10,8 +10,8 @@ RUN apt-get update -y && \
 
 # Apply Nginx configuration
 ADD config/nginx.conf /opt/etc/nginx.conf
-ADD config/laravel /etc/nginx/sites-available/laravel
-RUN ln -s /etc/nginx/sites-available/laravel /etc/nginx/sites-enabled/laravel && \
+ADD config/site /etc/nginx/sites-available/site
+RUN ln -s /etc/nginx/sites-available/site /etc/nginx/sites-enabled/site && \
     rm /etc/nginx/sites-enabled/default
 
 # Nginx startup script
